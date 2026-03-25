@@ -1,0 +1,170 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+header {
+    background: #121b26;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 0.8rem 0;
+    color: #ebf8ff;
+    font-size: 3rem;
+    letter-spacing: 0.04em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-direction: row;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 0.9rem 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #0f62fe, #4589ff);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #1f7efe;
+    transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background: linear-gradient(135deg, #1854d8, #8ab6ff);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(20, 97, 196, .35);
+    outline: none;
+}
+
+main {
+    padding: 1.2rem;
+}
+
+main h2 {
+    font-size: 2.2rem;
+    margin-top: 0;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    color: #94a8bc;
+}
+
+.home-link {
+    text-align: center;
+    margin: .8rem 0;
+}
+.home-link a {
+    display: inline-block;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #0f62fe, #4589ff);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.home-link a:hover {
+    opacity: .9;
+}
+
+.uni-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.uni-card {
+    border-radius: 0.9rem;
+    padding: 1rem;
+    color: #fff;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.35);
+}
+.bg-blue { background: linear-gradient(135deg, #0f62fe, #2f7bff); }
+.bg-cyan { background: linear-gradient(135deg, #00bcd4, #26c6da); }
+.bg-green { background: linear-gradient(135deg, #2e7d32, #4caf50); }
+.bg-orange { background: linear-gradient(135deg, #f57c00, #fb8c00); }
+.bg-purple { background: linear-gradient(135deg, #6a1b9a, #8e24aa); }
+.bg-teal { background: linear-gradient(135deg, #00796b, #009688); }
+.uni-card h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.school-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.school-card {
+    border-radius: 12px;
+    padding: 1.2rem;
+    color: #fff;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.school-card h3 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1.3rem;
+}
+
+.school-card h3 a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.school-card h3 a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.school-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0.8rem auto;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: block;
+}
+
+.school-info {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.school-info p {
+    margin: 0.5rem 0;
+}
+
+.school-info strong {
+    color: #fff;
+}
+
+.bg-1 { background: linear-gradient(135deg, #1e3a8a, #2563eb); }
+.bg-2 { background: linear-gradient(135deg, #0f766e, #14b8a6); }
+.bg-3 { background: linear-gradient(135deg, #7c2d12, #f97316); }
+.bg-4 { background: linear-gradient(135deg, #b91c1c, #ef4444); }
+.bg-5 { background: linear-gradient(135deg, #065f46, #10b981); }
+.bg-6 { background: linear-gradient(135deg, #1d4ed8, #3b82f6); }

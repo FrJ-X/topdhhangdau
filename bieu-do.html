@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu Đồ - Top Đại Học VN</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Top Đại Học VN</h1>
+        <nav>
+            <ul>
+                <li><a href="introduce.html">Giới Thiệu</a></li>
+                <li><a href="top-dai-hoc.html">Top Đại Học</a></li>
+                <li><a href="bieu-do.html">Biểu Đồ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="home-link"><a href="../index.html">← Về trang chủ</a></div>
+
+    <main>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            width: 80%;
+            margin: auto;
+        }
+
+        canvas {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>So sánh các tiêu chí đại học (2019 - 2025)</h2>
+
+<select id="universitySelect">
+    <option value="hanu">ĐH Quốc gia Hà Nội</option>
+    <option value="bkhn">ĐH Bách Khoa Hà Nội</option>
+    <option value="neu">ĐH Kinh tế Quốc dân</option>
+    <option value="hcmute">ĐH Sư phạm Kỹ thuật TP.HCM</option>
+    <option value="vnuhcm">ĐH Quốc gia TP.HCM</option>
+    <option value="duytan">ĐH Duy Tân</option>
+</select>
+
+<div class="chart-container">
+    <canvas id="radarChart"></canvas>
+</div>
+
+<div class="chart-container">
+    <canvas id="barChart"></canvas>
+</div>
+
+<script>
+const data = {
+    hanu: [90, 85, 92, 88, 80],
+    bkhn: [95, 88, 94, 90, 85],
+    neu: [88, 84, 91, 87, 80],
+    hcmute: [85, 82, 90, 85, 80],
+    vnuhcm: [92, 86, 93, 89, 82],
+    duytan: [80, 78, 88, 83, 78]
+};
+
+const labels = ["Đầu vào", "Đầu ra", "Việc làm", "Bằng cấp", "Thời gian"];
+
+const ctxRadar = document.getElementById('radarChart');
+const ctxBar = document.getElementById('barChart');
+
+let radarChart = new Chart(ctxRadar, {
+    type: 'radar',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Chỉ số',
+            data: data.hanu,
+            backgroundColor: 'rgba(0,123,255,0.2)',
+            borderColor: '#007BFF',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        animation: {
+            duration: 1000
+        },
+        scales: {
+            r: {
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
+        }
+    }
+});
+
+let barChart = new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Chỉ số',
+            data: data.hanu,
+            backgroundColor: '#28a745'
+        }]
+    },
+    options: {
+        responsive: true,
+        animation: {
+            duration: 1000
+        }
+    }
+});
+
+document.getElementById('universitySelect').addEventListener('change', function() {
+    const selected = this.value;
+
+    radarChart.data.datasets[0].data = data[selected];
+    barChart.data.datasets[0].data = data[selected];
+
+    radarChart.update();
+    barChart.update();
+});
+</script>
+
+</body>
+</html>
